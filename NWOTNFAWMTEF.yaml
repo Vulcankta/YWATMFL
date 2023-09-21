@@ -68,7 +68,7 @@ proxy-groups: # 建立策略組
           use:
             - myproxy            
             
-        - name: 🛑 廣告攔截
+        - name: 🚫 廣告攔截
           type: select
           proxies:
             - DIRECT
@@ -213,7 +213,7 @@ rules: # 規則由上往下遍歷，如上面規則已經命中，則不再往�
         - RULE-SET,private,DIRECT
         - RULE-SET,lancidr,DIRECT
         - GEOIP,LAN,DIRECT
-        - RULE-SET,reject,🛑 廣告攔截
+        - RULE-SET,reject,🚫 廣告攔截
         - RULE-SET,myselfreject,REJECT        
         - RULE-SET,myselfproxy,PROXY
         - RULE-SET,myselfdirect,DIRECT
