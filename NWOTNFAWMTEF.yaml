@@ -19,12 +19,14 @@ proxy-providers:
 proxy-groups: # 建立策略組
         - name: 🛡️ 代理模式
           type: select
+          disable-udp: false
           proxies:
             - 🇨🇳 黑名單 # 黑名單模式，意為「只有命中規則的網絡流量，才使用代理」
             - 🗽 繞過大陸 # 繞過大陸模式，意為「沒有命中規則的網絡流量，統統使用代理」
         
         - name: PROXY
           type: select
+          disable-udp: false
           proxies:
             - 📶 自動測速
             - 🩺 故障轉移            
@@ -40,6 +42,7 @@ proxy-groups: # 建立策略組
             
         - name: 🚫 廣告攔截
           type: select
+          disable-udp: false
           proxies:
             - DIRECT
             - REJECT
@@ -47,11 +50,13 @@ proxy-groups: # 建立策略組
             
         - name: 🇨🇳 黑名單
           type: select
+          disable-udp: false
           proxies:
             - DIRECT
             
         - name: 🗽 繞過大陸
           type: select
+          disable-udp: false
           proxies:
             - PROXY
 
