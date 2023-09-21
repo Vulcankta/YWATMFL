@@ -17,13 +17,13 @@ proxy-providers:
       url: http://cp.cloudflare.com
 
 proxy-groups: # 建立策略組
-        - name: 🔯 代理模式 
+        - name: 🛡️ 代理模式
           type: select
           proxies:
             - 黑名單 # 黑名單模式，意為「只有命中規則的網絡流量，才使用代理」
             - 繞過大陸 # 繞過大陸模式，意為「沒有命中規則的網絡流量，統統使用代理」
             
-        - name: 🔰 選擇節點 
+        - name: 📶 自動測速
           type: url-test
           url: http://cp.cloudflare.com
           interval: 300
@@ -32,6 +32,41 @@ proxy-groups: # 建立策略組
           disable-udp: false
           use:
             - myproxy
+
+        - name: 🩺 故障轉移
+          type: fallback
+          url: http://cp.cloudflare.com
+          interval: 60
+          lazy: false
+          disable-udp: false
+          use:
+            - myproxy            
+
+        - name: ⚖️ 負載均衡-散列
+          type: load-balance
+          url: http://cp.cloudflare.com
+          interval: 300
+          lazy: false
+          disable-udp: false
+          strategy: consistent-hashing
+          use:
+            - myproxy
+
+        - name: ⚖️ 負載均衡-輪詢
+          type: load-balance
+          url: http://cp.cloudflare.com
+          interval: 300
+          lazy: false
+          disable-udp: false
+          strategy: round-robin
+          use:
+            - myproxy
+
+        - name: ⚙️ 手動選擇
+          type: select
+          disable-udp: false
+          use:
+            - myproxy            
             
         - name: 🛑 廣告攔截
           type: select
@@ -53,7 +88,11 @@ proxy-groups: # 建立策略組
         - name: PROXY
           type: select
           proxies:
-            - 🔰 選擇節點
+            - 📶 自動測速
+            - 🩺 故障轉移            
+            - ⚖️ 負載均衡-散列
+            - ⚖️ 負載均衡-輪詢
+            - ⚙️ 手動選擇           
 
 rule-providers: 
         reject: # 廣告域名列表
