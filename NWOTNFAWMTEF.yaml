@@ -99,7 +99,6 @@ proxy-groups: # 建立策略組
           use:
             - myproxy
         
-
 rule-providers: 
         reject: # 廣告域名列表
           type: http
