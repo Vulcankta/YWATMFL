@@ -228,4 +228,4 @@ rules: # 規則由上往下遍歷，如上面規則已經命中，則不再往�
         - RULE-SET,tld-not-cn,PROXY
         - RULE-SET,gfw,PROXY
         - RULE-SET,proxy,PROXY        
-        - MATCH,🔯 代理模式 # 規則之外的
+        - MATCH,🛡️ 代理模式 # 規則之外的
