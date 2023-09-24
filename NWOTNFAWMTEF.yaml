@@ -212,7 +212,7 @@ rule-providers:
           path: ./ruleset/myselfdirect1.yaml
           interval: 10800
 
-        myselfproxy: # 自用代理規則2
+        myselfproxy2: # 自用代理規則2
           type: http
           behavior: classical
           url: "https://raw.gitmirror.com/Vulcankta/CLASH-PARSERS/main/myselfproxy2.yaml"
