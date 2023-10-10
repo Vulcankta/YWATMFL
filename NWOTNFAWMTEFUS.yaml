@@ -7,7 +7,7 @@ ipv6: true
 proxy-providers:
   myproxy:
     type: http
-    url: https://sub.maoxiongnet.com/sub?target=clash&new_name=true&url=https%3A%2F%2Fwww.mysubsoft.com%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3Df4d3210731f6cec3a8ec16fe7b60247a%7Chttps%3A%2F%2Fxn--mesr8b36xr0o.com%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3D93d04c90fb5f09e3e1fa342d5fce2c25%7Chttps%3A%2F%2Fsub1.smallstrawberry.com%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3D08518ed8f4effeefedf406835d963780%7Chttps%3A%2F%2Fraw.githubusercontent.com%2Faiboboxx%2Fclashfree%2Fmain%2Fclash.yml&insert=false&append_type=true&emoji=true&list=true&tfo=false&scv=false&fdn=true&sort=true&udp=true #粘貼 Proxy Provider Converter 提供的鏈接
+    url: https://sub.maoxiongnet.com/sub?target=clash&new_name=true&url=https%3A%2F%2Fwww.mysubsoft.com%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3D66b0e1731f4b7de6e3c3b03985b75dd3%7Chttps%3A%2F%2Fsub1.smallstrawberry.com%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3De2a4a2d24ec487a7e1665de3e8c93a34%7Chttps%3A%2F%2Fxn--mesr8b36xr0o.com%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3Dbf1b0136ab38d60c338a5418bd669fb5&insert=false&append_type=true&emoji=true&list=true&tfo=false&scv=false&fdn=true&sort=true&udp=true #粘貼 Proxy Provider Converter 提供的鏈接
     interval: 10800
     path: ./myproxy.yaml
     filter: '美國|美国'
