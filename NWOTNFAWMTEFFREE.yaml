@@ -7,7 +7,7 @@ ipv6: true
 proxy-providers:
   myproxy:
     type: http
-    url: https://sub.maoxiongnet.com/sub?target=clash&new_name=true&url=https%3A%2F%2Fraw.githubusercontent.com%2Faiboboxx%2Fclashfree%2Fmain%2Fclash.yml&insert=false&append_type=true&emoji=true&list=true&tfo=false&scv=false&fdn=true&sort=true&udp=true #粘貼 Proxy Provider Converter 提供的鏈接
+    url: https://sub.maoxiongnet.com/sub?target=clash&new_name=true&url=https%3A%2F%2Fsub1.liangxinjichang.com%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3D760e6ae25a6423607e992d760ae7ea4a%7Chttps%3A%2F%2Fcm-sub.pz.pe%2Fsubscribe%2FRH38BUSQ3IRD8NPS%3Fnode%3Dmix%7Chttps%3A%2F%2Fzhs.futbol%2Flink%2FlplSMjwOzkmHEciB%3Fmu%3D4%26tj%3D1%7Chttps%3A%2F%2Fs.trojanflare.com%2Fclashx%2Fa81227ee-aa07-4635-af45-ed36c5a075a7%7Chttps%3A%2F%2Fsub.riolu.link%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3D85767f48cea67e6f7652bf6c6e9d5b69%26flag%3Dclash%7Chttps%3A%2F%2Fbensll.top%2Flink%2FeJHXYViXZ7C4T7ZT%3Fclash%3D1%7Chttps%3A%2F%2Fsub.ssr.sh%2Flink%2FHfOXnApIp6NGVIKs%3Fclash%3D1%7Chttps%3A%2F%2Fsub.ssr.sh%2Flink%2FVjZ5w59MZvcgPeuz%3Fclash%3D1%7Chttps%3A%2F%2Frss-node.com%2Flink%2FYVks5Op3s0hvV9Bw%3Fmu%3D1&insert=false&append_type=true&emoji=true&list=true&tfo=false&scv=false&fdn=true&sort=true&udp=true #粘貼 Proxy Provider Converter 提供的鏈接
     interval: 10800
     path: ./myproxy.yaml
     health-check:
