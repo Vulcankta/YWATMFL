@@ -7,7 +7,7 @@ ipv6: true
 proxy-providers:
   myproxy:
     type: http
-    url: https://api.v1.mk/sub?target=clash&url=https%3A%2F%2Fsubsubsubsubsub.keledydz.uk%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3D66b0e1731f4b7de6e3c3b03985b75dd3%7Chttps%3A%2F%2Fnano.nachoneko.cn%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3Da375b9a2b793311738cd0cd201b5765f%7Chttps%3A%2F%2Fsub1.smallstrawberry.com%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3D59b740b9ea2003e92da60a1525f55374%7Chttps%3A%2F%2Fneko-warp.nloli.xyz%2Fneko_warp.yaml%7Chttps%3A%2F%2Fsubs.zeabur.app%2Fclash&insert=true&config=https%3A%2F%2Fraw.githubusercontent.com%2FACL4SSR%2FACL4SSR%2Fmaster%2FClash%2Fconfig%2FACL4SSR_Online_Full_NoAuto.ini&append_type=true&tls13=true&sort=true&emoji=true&list=true&xudp=true&udp=false&tfo=false&expand=true&scv=false&fdn=true&new_name=true #粘貼 Proxy Provider Converter 提供的鏈接
+    url: https://api.v1.mk/sub?target=clash&url=https%3A%2F%2Fsubsubsubsubsub.keledydz.uk%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3D66b0e1731f4b7de6e3c3b03985b75dd3%7Chttps%3A%2F%2Fnano.nachoneko.cn%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3Da375b9a2b793311738cd0cd201b5765f%7Chttps%3A%2F%2Fsub2.smallstrawberry.com%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3D59b740b9ea2003e92da60a1525f55374%7Chttps%3A%2F%2Ffku-ppg.co.uk%7Chttps%3A%2F%2Fsubs.zeabur.app%2Fclash%7Chttps%3A%2F%2Fneko-warp.nloli.xyz%2Fneko_warp.yaml&insert=true&config=https%3A%2F%2Fraw.githubusercontent.com%2FACL4SSR%2FACL4SSR%2Fmaster%2FClash%2Fconfig%2FACL4SSR_Online_Full_NoAuto.ini&append_type=true&tls13=true&sort=true&emoji=true&list=true&xudp=true&udp=false&tfo=true&expand=true&scv=true&fdn=true&new_name=true #粘貼 Proxy Provider Converter 提供的鏈接
     interval: 10800
     path: ./myproxy.yaml
     health-check:
