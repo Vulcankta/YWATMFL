@@ -19,14 +19,14 @@ proxy-providers:
 proxy-groups: # 建立策略組
         - name: 🛡️ 代理模式
           type: select
-          disable-udp: false
+          disable-udp: true
           proxies:
             - 🇨🇳 黑名單 # 黑名單模式，意為「只有命中規則的網絡流量，才使用代理」
             - 🗽 繞過大陸 # 繞過大陸模式，意為「沒有命中規則的網絡流量，統統使用代理」
         
         - name: PROXY
           type: select
-          disable-udp: false
+          disable-udp: true
           proxies:
             - 📶 自動測速
             - 🩺 故障轉移            
@@ -36,13 +36,13 @@ proxy-groups: # 建立策略組
             
         - name: ⚙️ 手動選擇
           type: select
-          disable-udp: false
+          disable-udp: true
           use:
             - myproxy            
             
         - name: 🚫 廣告攔截
           type: select
-          disable-udp: false
+          disable-udp: true
           proxies:
             - DIRECT
             - REJECT
@@ -50,13 +50,13 @@ proxy-groups: # 建立策略組
             
         - name: 🇨🇳 黑名單
           type: select
-          disable-udp: false
+          disable-udp: true
           proxies:
             - DIRECT
             
         - name: 🗽 繞過大陸
           type: select
-          disable-udp: false
+          disable-udp: true
           proxies:
             - PROXY
 
@@ -66,7 +66,7 @@ proxy-groups: # 建立策略組
           interval: 300
           tolerance: 350
           lazy: false
-          disable-udp: false
+          disable-udp: true
           use:
             - myproxy
 
@@ -75,7 +75,7 @@ proxy-groups: # 建立策略組
           url: http://cp.cloudflare.com
           interval: 300
           lazy: false
-          disable-udp: false
+          disable-udp: true
           use:
             - myproxy            
 
@@ -84,7 +84,7 @@ proxy-groups: # 建立策略組
           url: http://cp.cloudflare.com
           interval: 300
           lazy: false
-          disable-udp: false
+          disable-udp: true
           strategy: consistent-hashing
           use:
             - myproxy
@@ -94,7 +94,7 @@ proxy-groups: # 建立策略組
           url: http://cp.cloudflare.com
           interval: 300
           lazy: false
-          disable-udp: false
+          disable-udp: true
           strategy: round-robin
           use:
             - myproxy
