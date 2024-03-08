@@ -90,6 +90,7 @@ proxy-groups: # 建立策略組
           lazy: false
           disable-udp: true
           strategy: round-robin
+          filter: '香港|HK'
           use:
             - myproxy
         
