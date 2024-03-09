@@ -26,7 +26,35 @@ proxy-groups: # 建立策略組
             - 🩺 故障轉移            
             - ⚖️ 負載均衡-散列
             - ⚖️ 負載均衡-輪詢
-            - ⚙️ 手動選擇               
+            - ⚙️ 手動選擇  
+            - 📶 自動測速 俄羅斯|俄罗斯|RU
+            - 🩺 故障轉移 俄羅斯|俄罗斯|RU            
+            - ⚖️ 負載均衡-散列 俄羅斯|俄罗斯|RU
+            - ⚖️ 負載均衡-輪詢 俄羅斯|俄罗斯|RU
+            - 📶 自動測速 臺灣|臺湾|台灣|台湾|TW
+            - 🩺 故障轉移 臺灣|臺湾|台灣|台湾|TW            
+            - ⚖️ 負載均衡-散列 臺灣|臺湾|台灣|台湾|TW
+            - ⚖️ 負載均衡-輪詢 臺灣|臺湾|台灣|台湾|TW
+            - 📶 自動測速 新加坡|獅城|狮城|SG
+            - 🩺 故障轉移 新加坡|獅城|狮城|SG            
+            - ⚖️ 負載均衡-散列 新加坡|獅城|狮城|SG
+            - ⚖️ 負載均衡-輪詢 新加坡|獅城|狮城|SG
+            - 📶 自動測速 日本|JP
+            - 🩺 故障轉移 日本|JP            
+            - ⚖️ 負載均衡-散列 日本|JP
+            - ⚖️ 負載均衡-輪詢 日本|JP
+            - 📶 自動測速 港|HK
+            - 🩺 故障轉移 港|HK            
+            - ⚖️ 負載均衡-散列 港|HK
+            - ⚖️ 負載均衡-輪詢 港|HK
+            - 📶 自動測速 美國|美国|US
+            - 🩺 故障轉移 美國|美国|US            
+            - ⚖️ 負載均衡-散列 美國|美国|US
+            - ⚖️ 負載均衡-輪詢 美國|美国|US
+            - 📶 自動測速 馬來西亞|马来西亚|馬来西亚|马來西亞|MY
+            - 🩺 故障轉移 馬來西亞|马来西亚|馬来西亚|马來西亞|MY            
+            - ⚖️ 負載均衡-散列 馬來西亞|马来西亚|馬来西亚|马來西亞|MY
+            - ⚖️ 負載均衡-輪詢 馬來西亞|马来西亚|馬来西亚|马來西亞|MY       
             
         - name: ⚙️ 手動選擇
           type: select
@@ -92,6 +120,307 @@ proxy-groups: # 建立策略組
           strategy: round-robin
           use:
             - myproxy
+
+        - name: 📶 自動測速 俄羅斯|俄罗斯|RU
+          type: url-test
+          url: http://cp.cloudflare.com
+          interval: 300
+          tolerance: 350
+          lazy: false
+          disable-udp: true
+          filter: '俄羅斯|俄罗斯|RU'
+          use:
+            - myproxy
+
+        - name: 🩺 故障轉移 俄羅斯|俄罗斯|RU
+          type: fallback
+          url: http://cp.cloudflare.com
+          interval: 300
+          lazy: false
+          disable-udp: true
+          filter: '俄羅斯|俄罗斯|RU'
+          use:
+            - myproxy            
+
+        - name: ⚖️ 負載均衡-散列 俄羅斯|俄罗斯|RU
+          type: load-balance
+          url: http://cp.cloudflare.com
+          interval: 300
+          lazy: false
+          disable-udp: true
+          strategy: consistent-hashing
+          filter: '俄羅斯|俄罗斯|RU'
+          use:
+            - myproxy
+
+        - name: ⚖️ 負載均衡-輪詢 俄羅斯|俄罗斯|RU
+          type: load-balance
+          url: http://cp.cloudflare.com
+          interval: 300
+          lazy: false
+          disable-udp: true
+          strategy: round-robin
+          filter: '俄羅斯|俄罗斯|RU'
+          use:
+            - myproxy
+
+        - name: 📶 自動測速 臺灣|臺湾|台灣|台湾|TW
+          type: url-test
+          url: http://cp.cloudflare.com
+          interval: 300
+          tolerance: 350
+          lazy: false
+          disable-udp: true
+          filter: '臺灣|臺湾|台灣|台湾|TW'
+          use:
+            - myproxy
+
+        - name: 🩺 故障轉移 臺灣|臺湾|台灣|台湾|TW
+          type: fallback
+          url: http://cp.cloudflare.com
+          interval: 300
+          lazy: false
+          disable-udp: true
+          filter: '臺灣|臺湾|台灣|台湾|TW'
+          use:
+            - myproxy            
+
+        - name: ⚖️ 負載均衡-散列 臺灣|臺湾|台灣|台湾|TW
+          type: load-balance
+          url: http://cp.cloudflare.com
+          interval: 300
+          lazy: false
+          disable-udp: true
+          strategy: consistent-hashing
+          filter: '臺灣|臺湾|台灣|台湾|TW'
+          use:
+            - myproxy
+
+        - name: ⚖️ 負載均衡-輪詢 臺灣|臺湾|台灣|台湾|TW
+          type: load-balance
+          url: http://cp.cloudflare.com
+          interval: 300
+          lazy: false
+          disable-udp: true
+          strategy: round-robin
+          filter: '臺灣|臺湾|台灣|台湾|TW'
+          use:
+            - myproxy
+
+        - name: 📶 自動測速 新加坡|獅城|狮城|SG
+          type: url-test
+          url: http://cp.cloudflare.com
+          interval: 300
+          tolerance: 350
+          lazy: false
+          disable-udp: true
+          filter: '新加坡|獅城|狮城|SG'
+          use:
+            - myproxy
+
+        - name: 🩺 故障轉移 新加坡|獅城|狮城|SG
+          type: fallback
+          url: http://cp.cloudflare.com
+          interval: 300
+          lazy: false
+          disable-udp: true
+          filter: '新加坡|獅城|狮城|SG'
+          use:
+            - myproxy            
+
+        - name: ⚖️ 負載均衡-散列 新加坡|獅城|狮城|SG
+          type: load-balance
+          url: http://cp.cloudflare.com
+          interval: 300
+          lazy: false
+          disable-udp: true
+          strategy: consistent-hashing
+          filter: '新加坡|獅城|狮城|SG'
+          use:
+            - myproxy
+
+        - name: ⚖️ 負載均衡-輪詢 新加坡|獅城|狮城|SG
+          type: load-balance
+          url: http://cp.cloudflare.com
+          interval: 300
+          lazy: false
+          disable-udp: true
+          strategy: round-robin
+          filter: '新加坡|獅城|狮城|SG'
+          use:
+            - myproxy
+
+        - name: 📶 自動測速 日本|JP
+          type: url-test
+          url: http://cp.cloudflare.com
+          interval: 300
+          tolerance: 350
+          lazy: false
+          disable-udp: true
+          filter: '日本|JP'
+          use:
+            - myproxy
+
+        - name: 🩺 故障轉移 日本|JP
+          type: fallback
+          url: http://cp.cloudflare.com
+          interval: 300
+          lazy: false
+          disable-udp: true
+          filter: '日本|JP'
+          use:
+            - myproxy            
+
+        - name: ⚖️ 負載均衡-散列 日本|JP
+          type: load-balance
+          url: http://cp.cloudflare.com
+          interval: 300
+          lazy: false
+          disable-udp: true
+          strategy: consistent-hashing
+          filter: '日本|JP'
+          use:
+            - myproxy
+
+        - name: ⚖️ 負載均衡-輪詢 日本|JP
+          type: load-balance
+          url: http://cp.cloudflare.com
+          interval: 300
+          lazy: false
+          disable-udp: true
+          strategy: round-robin
+          filter: '日本|JP'
+          use:
+            - myproxy
+
+        - name: 📶 自動測速 港|HK
+          type: url-test
+          url: http://cp.cloudflare.com
+          interval: 300
+          tolerance: 350
+          lazy: false
+          disable-udp: true
+          filter: '港|HK'
+          use:
+            - myproxy
+
+        - name: 🩺 故障轉移 港|HK
+          type: fallback
+          url: http://cp.cloudflare.com
+          interval: 300
+          lazy: false
+          disable-udp: true
+          filter: '港|HK'
+          use:
+            - myproxy            
+
+        - name: ⚖️ 負載均衡-散列 港|HK
+          type: load-balance
+          url: http://cp.cloudflare.com
+          interval: 300
+          lazy: false
+          disable-udp: true
+          strategy: consistent-hashing
+          filter: '港|HK'
+          use:
+            - myproxy
+
+        - name: ⚖️ 負載均衡-輪詢 港|HK
+          type: load-balance
+          url: http://cp.cloudflare.com
+          interval: 300
+          lazy: false
+          disable-udp: true
+          strategy: round-robin
+          filter: '港|HK'
+          use:
+            - myproxy
+
+        - name: 📶 自動測速 美國|美国|US
+          type: url-test
+          url: http://cp.cloudflare.com
+          interval: 300
+          tolerance: 350
+          lazy: false
+          disable-udp: true
+          filter: '美國|美国|US'
+          use:
+            - myproxy
+
+        - name: 🩺 故障轉移 美國|美国|US
+          type: fallback
+          url: http://cp.cloudflare.com
+          interval: 300
+          lazy: false
+          disable-udp: true
+          filter: '美國|美国|US'
+          use:
+            - myproxy            
+
+        - name: ⚖️ 負載均衡-散列 美國|美国|US
+          type: load-balance
+          url: http://cp.cloudflare.com
+          interval: 300
+          lazy: false
+          disable-udp: true
+          strategy: consistent-hashing
+          filter: '美國|美国|US'
+          use:
+            - myproxy
+
+        - name: ⚖️ 負載均衡-輪詢 美國|美国|US
+          type: load-balance
+          url: http://cp.cloudflare.com
+          interval: 300
+          lazy: false
+          disable-udp: true
+          strategy: round-robin
+          filter: '美國|美国|US'
+          use:
+            - myproxy
+
+        - name: 📶 自動測速 馬來西亞|马来西亚|馬来西亚|马來西亞|MY
+          type: url-test
+          url: http://cp.cloudflare.com
+          interval: 300
+          tolerance: 350
+          lazy: false
+          disable-udp: true
+          filter: '馬來西亞|马来西亚|馬来西亚|马來西亞|MY'
+          use:
+            - myproxy
+
+        - name: 🩺 故障轉移 馬來西亞|马来西亚|馬来西亚|马來西亞|MY
+          type: fallback
+          url: http://cp.cloudflare.com
+          interval: 300
+          lazy: false
+          disable-udp: true
+          filter: '馬來西亞|马来西亚|馬来西亚|马來西亞|MY'
+          use:
+            - myproxy            
+
+        - name: ⚖️ 負載均衡-散列 馬來西亞|马来西亚|馬来西亚|马來西亞|MY
+          type: load-balance
+          url: http://cp.cloudflare.com
+          interval: 300
+          lazy: false
+          disable-udp: true
+          strategy: consistent-hashing
+          filter: '馬來西亞|马来西亚|馬来西亚|马來西亞|MY'
+          use:
+            - myproxy
+
+        - name: ⚖️ 負載均衡-輪詢 馬來西亞|马来西亚|馬来西亚|马來西亞|MY
+          type: load-balance
+          url: http://cp.cloudflare.com
+          interval: 300
+          lazy: false
+          disable-udp: true
+          strategy: round-robin
+          filter: '馬來西亞|马来西亚|馬来西亚|马來西亞|MY'
+          use:
+            - myproxy            
         
 rule-providers: 
         reject: # 廣告域名列表
