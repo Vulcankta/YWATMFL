@@ -1,0 +1,30 @@
+dns:
+  enable: true
+  ipv6: true
+  enhanced-mode: fake-ip
+  nameserver:
+    - tcp://127.0.0.1
+  fallback: []
+  nameserver-policy: {}
+  fake-ip-filter:
+    - +.stun.*.*
+    - +.stun.*.*.*
+    - +.stun.*.*.*.*
+    - +.stun.*.*.*.*.*
+    - +.stun.playstation.net
+    - WORKGROUP
+    - "*.net"
+    - "*.com"
+    - "*.cn"
+    - "*.org"
+    - "*.vip"
+    - "*.xyz"
+    - "*.rodeo"
+    - "*.io"
+tun:
+  enable: true
+  stack: gvisor
+  auto-route: true
+  dns-hijack:
+    - any:53
+interface-name: NN
