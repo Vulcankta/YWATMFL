@@ -54,7 +54,15 @@ proxy-groups: # 建立策略組
             - 📶 自動測速 馬來西亞|马来西亚|馬来西亚|马來西亞|MY
             - 🩺 故障轉移 馬來西亞|马来西亚|馬来西亚|马來西亞|MY            
             - ⚖️ 負載均衡-散列 馬來西亞|马来西亚|馬来西亚|马來西亞|MY
-            - ⚖️ 負載均衡-輪詢 馬來西亞|马来西亚|馬来西亚|马來西亞|MY       
+            - ⚖️ 負載均衡-輪詢 馬來西亞|马来西亚|馬来西亚|马來西亞|MY
+            - 📶 自動測速 韓國|韓国|韩國|韩国|KR
+            - 🩺 故障轉移 韓國|韓国|韩國|韩国|KR            
+            - ⚖️ 負載均衡-散列 韓國|韓国|韩國|韩国|KR
+            - ⚖️ 負載均衡-輪詢 韓國|韓国|韩國|韩国|KR  
+            - 📶 自動測速 德國|德国|DE
+            - 🩺 故障轉移 德國|德国|DE            
+            - ⚖️ 負載均衡-散列 德國|德国|DE
+            - ⚖️ 負載均衡-輪詢 德國|德国|DE              
             
         - name: ⚙️ 手動選擇
           type: select
@@ -420,7 +428,93 @@ proxy-groups: # 建立策略組
           strategy: round-robin
           filter: '馬來西亞|马来西亚|馬来西亚|马來西亞|MY'
           use:
+            - myproxy
+
+        - name: 📶 自動測速 韓國|韓国|韩國|韩国|KR
+          type: url-test
+          url: http://cp.cloudflare.com
+          interval: 300
+          tolerance: 350
+          lazy: false
+          disable-udp: true
+          filter: '韓國|韓国|韩國|韩国|KR'
+          use:
+            - myproxy
+
+        - name: 🩺 故障轉移 韓國|韓国|韩國|韩国|KR
+          type: fallback
+          url: http://cp.cloudflare.com
+          interval: 300
+          lazy: false
+          disable-udp: true
+          filter: '韓國|韓国|韩國|韩国|KR'
+          use:
             - myproxy            
+
+        - name: ⚖️ 負載均衡-散列 韓國|韓国|韩國|韩国|KR
+          type: load-balance
+          url: http://cp.cloudflare.com
+          interval: 300
+          lazy: false
+          disable-udp: true
+          strategy: consistent-hashing
+          filter: '韓國|韓国|韩國|韩国|KR'
+          use:
+            - myproxy
+
+        - name: ⚖️ 負載均衡-輪詢 韓國|韓国|韩國|韩国|KR
+          type: load-balance
+          url: http://cp.cloudflare.com
+          interval: 300
+          lazy: false
+          disable-udp: true
+          strategy: round-robin
+          filter: '韓國|韓国|韩國|韩国|KR'
+          use:
+            - myproxy 
+
+        - name: 📶 自動測速 德國|德国|DE
+          type: url-test
+          url: http://cp.cloudflare.com
+          interval: 300
+          tolerance: 350
+          lazy: false
+          disable-udp: true
+          filter: '德國|德国|DE'
+          use:
+            - myproxy
+
+        - name: 🩺 故障轉移 德國|德国|DE
+          type: fallback
+          url: http://cp.cloudflare.com
+          interval: 300
+          lazy: false
+          disable-udp: true
+          filter: '德國|德国|DE'
+          use:
+            - myproxy            
+
+        - name: ⚖️ 負載均衡-散列 德國|德国|DE
+          type: load-balance
+          url: http://cp.cloudflare.com
+          interval: 300
+          lazy: false
+          disable-udp: true
+          strategy: consistent-hashing
+          filter: '德國|德国|DE'
+          use:
+            - myproxy
+
+        - name: ⚖️ 負載均衡-輪詢 德國|德国|DE
+          type: load-balance
+          url: http://cp.cloudflare.com
+          interval: 300
+          lazy: false
+          disable-udp: true
+          strategy: round-robin
+          filter: '德國|德国|DE'
+          use:
+            - myproxy             
         
 rule-providers: 
         reject: # 廣告域名列表
